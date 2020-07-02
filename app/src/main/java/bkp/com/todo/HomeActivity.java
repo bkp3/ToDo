@@ -1,13 +1,16 @@
 package bkp.com.todo;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,6 +37,13 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import bkp.com.todo.ViewHolder.NoteViewHolder;
+import bkp.com.todo.model.Notes;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -48,6 +58,12 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+
+    private DatabaseReference NotesRef;
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,27 +72,25 @@ public class HomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         uid = mAuth.getUid();
 
-        btn1 = findViewById(R.id.startbtn1);
+        NotesRef = FirebaseDatabase.getInstance().getReference().child("users").child(uid).child("notes");
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(HomeActivity.this, "Hiiiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        recyclerView = findViewById(R.id.recycler_menu);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
 
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent1 = new Intent(HomeActivity.this, AddNotesActivity.class);
+                startActivity(intent1);
             }
         });
 
@@ -149,9 +163,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_notes:
-                        Toast.makeText(HomeActivity.this, "study clicked", Toast.LENGTH_SHORT).show();
-                        /*Intent intent1 = new Intent(HomeActivity.this, CategoryActivity.class);
-                        startActivity(intent1);*/
+                        //Toast.makeText(HomeActivity.this, "study clicked", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(HomeActivity.this, AddNotesActivity.class);
+                        startActivity(intent1);
                         break;
 
                     case R.id.nav_profile:
@@ -195,6 +209,48 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+
+
+        FirebaseRecyclerOptions<Notes> options = new FirebaseRecyclerOptions.Builder<Notes>().setQuery(NotesRef,Notes.class).build();
+        FirebaseRecyclerAdapter<Notes, NoteViewHolder> adapter = new FirebaseRecyclerAdapter<Notes, NoteViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull final Notes model) {
+
+                holder.txtNoteTag.setText(model.getTag());
+                holder.txtNoteDetail.setText(model.getDetail());
+                holder.txtNoteTime.setText(model.getDate() + " - " + model.getTime());
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(HomeActivity.this, MaintainNotesActivity.class);
+                        intent.putExtra("nid",model.getNid());
+                        startActivity(intent);
+
+                    }
+                });
+
+            }
+
+            @NonNull
+            @Override
+            public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_items_layout, parent, false);
+                NoteViewHolder holder = new NoteViewHolder(view);
+                return holder;
+            }
+        };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -5,50 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgthree"
-    tools:context=".LoginActivity">
-
+    tools:context=".AddNotesActivity">
 
     <EditText
-        android:id="@+id/email_al"
+        android:id="@+id/notes_tag_aan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/input_design"
         android:padding="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="100dp"
-        android:hint="Email..."
-        android:inputType="textEmailSubject"
+        android:layout_marginTop="20dp"
+        android:hint="Add Note Tag..."
+        android:inputType="textMultiLine"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
-        android:textStyle="bold"/>
-
-
-
+        android:textStyle="bold"
+        />
     <EditText
-        android:id="@+id/password_al"
+        android:id="@+id/notes_detail_aan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email_al"
         android:background="@drawable/input_design"
+        android:layout_below="@+id/notes_tag_aan"
         android:padding="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
-        android:hint="Password..."
-        android:inputType="textPassword"
+        android:hint="Add Notes..."
+        android:inputType="textMultiLine"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
-        android:textStyle="bold"/>
-
+        />
 
     <Button
-        android:id="@+id/signin_al"
+        android:id="@+id/notes_add_aan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_al"
+        android:layout_below="@+id/notes_detail_aan"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -56,36 +52,9 @@
         android:padding="17dp"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Login"
+        android:text="Add Note"
         android:textColor="@android:color/white"
-        android:layout_alignParentLeft="true"/>
-
-
-    <TextView
-        android:id="@+id/newuser_al"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New User? Click Here"
-        android:layout_below="@id/signin_al"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="15dp"/>
-
-    <TextView
-        android:id="@+id/forgot_al"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset Password"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="60dp"
-        android:layout_marginEnd="23dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="23dp"/>
+        android:layout_alignParentLeft="true"
+        />
 
 </RelativeLayout>

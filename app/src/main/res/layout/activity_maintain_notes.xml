@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="15dp"
+    tools:context=".MaintainNotesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgthree">
+
+        <EditText
+            android:id="@+id/note_tag_amn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_design"
+            android:padding="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="Add Note Tag..."
+            android:inputType="textMultiLine"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/note_detail_amn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_design"
+            android:layout_below="@+id/note_tag_amn"
+            android:padding="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="6dp"
+            android:hint="Add Notes..."
+            android:inputType="textMultiLine"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="17sp"
+            />
+
+        <Button
+            android:id="@+id/note_update_amn"
+
+            android:layout_below="@+id/note_detail_amn"
+            android:text="Apply Changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button"
+            android:padding="17dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            />
+
+        <Button
+            android:id="@+id/delete_note_amn"
+            android:text="Delete This Note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notes_detail_aan"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button"
+            android:padding="17dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -4,20 +4,45 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logo"
+        android:label="ToDo"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".ForgotActivity" />
+
+        <activity
+            android:name=".MaintainNotesActivity"
+            android:label="Edit and Delete Note"/>
+
+        <activity
+            android:name=".AddNotesActivity"
+            android:label="Add Note"/>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"/>
+
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"/>
+
+        <activity
+            android:name=".ForgotActivity"
+            android:label="Reset Password"/>
+
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="To Do"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LoginActivity" />
+
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="Sign Up"/>
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="Sign In"/>
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppThemeMain">
@@ -27,6 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

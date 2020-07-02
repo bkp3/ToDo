@@ -4,48 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgthree"
     tools:context=".RegistrationActivity">
 
     <EditText
         android:id="@+id/name_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name..."/>
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Name..."
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/phone_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
         android:layout_below="@+id/name_ar"
-        android:hint="Enter phone..."/>
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Mobile Number..."
+        android:inputType="number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/email_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone_ar"
-        android:hint="Enter Email..."/>
+        android:layout_marginTop="6dp"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Email..."
+        android:inputType="textEmailSubject"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/gender_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:layout_below="@+id/email_ar"
-        android:hint="Enter Gender..."/>
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Gender..."
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/dob_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/input_design"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_below="@+id/gender_ar"
-        android:hint="Enter dob..."/>
+        android:hint="Date Of Birth..."
+        android:focusable="false"
+        android:clickable="true"
+        android:editable="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/password_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:hint="Password..."
         android:layout_below="@+id/dob_ar"
-        android:hint="Enter paasword..."/>
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
 
     <Button
@@ -53,7 +114,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_ar"
-        android:layout_marginTop="10dp"
-        android:text="Sign Up"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/button"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/already_ar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signup_ar"
+        android:text="Already Account? click here"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"/>
 
 </RelativeLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="@drawable/bgthree"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
@@ -20,15 +20,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <Button
-        android:id="@+id/startbtn1"
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Insert data"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+
+        ></androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>

@@ -91,6 +91,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Login Success.",
+                            Toast.LENGTH_SHORT).show();
                     updateUI(user);
                 }else {
                     Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException(),
@@ -109,8 +111,8 @@ public class LoginActivity extends AppCompatActivity {
         if (user != null) {
             /*------------ If user's email is verified then access login -----------*/
 
-            Toast.makeText(LoginActivity.this, "Login Success.",
-                    Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(LoginActivity.this, "Login Success.",
+                    Toast.LENGTH_SHORT).show();*/
             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         }
         /*else {
