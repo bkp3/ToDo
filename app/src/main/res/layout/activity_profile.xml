@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/image_ap"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/user" />
+
+    <TextView
+        android:id="@+id/name_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image_ap"
+        android:textSize="30sp"
+        android:text="user name"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/email_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/name_ap"
+        android:textSize="30sp"
+        android:text="Email"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/phone_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/email_ap"
+        android:textSize="30sp"
+        android:text="Phone"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/gender_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/phone_ap"
+        android:textSize="30sp"
+        android:text="Gender"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/dob_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/gender_ap"
+        android:textSize="30sp"
+        android:text="DOB"
+        android:textColor="@color/colorPrimary"
+        />
+
+
+
+</RelativeLayout>

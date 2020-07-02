@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    h1 {
+      border-style: solid;
+    }
+
+    pre {
+      margin: auto;
+      padding: 10px;
+      color: #21818a;
+      <!--background: rgba(242, 233, 208);-->
+
+    }
+</style>
+</head>
+
+<body>
+
+<h1><center><font color=Red>18. Exception Handling<br></font></center></h1>
+<hr>
+
+<div>
+
+    <h3>18.1 Exception :-</h3>
+
+    <p>Exception is an abnormal condition that occurs during the execution of a program & due to which normal flow of the program's insrtuction may distrupt.</p>
+
+
+    <b style="color:green;">Example :-</b>
+    <code><pre>
+class Demo {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+        System.out.println(5/0);
+        System.out.println("Hello Again");
+    }
+}<br>
+<strong style="color:black;">Output:- </strong>
+        <samp>Hello</samp>
+        <samp style="color:red;">Error :- Exception in main thread java.lang.ArithmeticException : / by zero</samp>
+</pre></code>
+
+
+    <hr>
+</div>
+
+
+<div>
+
+    <h3>18.2 Exception Handling :-</h3>
+
+    <p>It is a mechanism to handle the exception.</p>
+    <p>Exception Handling is to maintain the normal flow of the application and to prevent abnormal termination of program.</p>
+    <p>Some common exception</p>
+    <ul>
+        <li>Arithmetic Exception :- <br><code>int a = 5/0;</code><br></li>
+        <li>Null Pointer Exception :- <br><code>String str = null;<br>System.out.println(s.length());</code><br></li>
+        <li>ArrayIndexOutOfBounds Exception :- <br><code>int []arr = new int[5];<br>System.out.println(arr[6]);<br></code></li>
+        <li>Number Format Exception :- <br><code>String str = "12x";<br>int i = Integer.parseInt(str);</code><br></li>
+
+    </ul>
+    <b style="color:green;">Example :-</b>
+    <code><pre>
+class Demo {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        if(x > y){
+            System.out.println("x is greater than y");
+        }else{
+            System.out.println("x is less than y");
+        }
+    }
+}<br>
+<strong style="color:black;">Output:- </strong><samp>x is less than y</samp>
+</pre></code>
+
+    <hr>
+</div>
+
+<div>
+
+    <h3>3.3 switch :-</h3>
+
+    <p>switch statement are used to select one of many code blocks to be executed.</p>
+
+    <b style="color:green;">Example :-</b>
+    <code><pre>
+class Demo {
+    public static void main(String[] args) {
+        int day = 3;
+        switch (day) {
+          case 1:
+            System.out.println("Monday");
+            break;
+          case 2:
+            System.out.println("Tuesday");
+            break;
+          case 3:
+            System.out.println("Wednesday");
+            break;
+          case 4:
+            System.out.println("Thursday");
+            break;
+          case 5:
+            System.out.println("Friday");
+            break;
+          case 6:
+            System.out.println("Saturday");
+            break;
+          case 7:
+            System.out.println("Sunday");
+            break;
+        }
+    }
+}<br>
+<strong style="color:black;">Output:- </strong><samp>Wednesday</samp>
+</pre></code>
+
+    <hr>
+</div>
+
+<div>
+
+    <h3>3.4 for  :-</h3>
+
+    <p>When we know exactly how many times you want to loop through a block of code, then we use the for loop.</p>
+
